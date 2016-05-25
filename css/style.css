@@ -12,6 +12,7 @@ h6 {
   padding:0;
   margin:0;
   font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }
 
 .clear-fix {
@@ -32,11 +33,9 @@ h1 {
 }
 
 h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #999;
+  font-size: 26px;
+  color: #111;
   line-height: 29px;
-  padding: 10px;
 }
 
 h3 {
@@ -61,11 +60,34 @@ h5 {
 
 }
 
+.role-span {
+  color: #ddd;
+}
+
+@media screen and (max-width: 371px) {
+  .role-span {
+    font-size: 4vw;
+  }
+  h1 {
+    font-size: 10vw;
+    line-height: 12vw;
+  }
+}
+
+@media screen and (min-width: 372px) and (max-width: 573px) {
+  .role-span {
+    display: block;
+  }
+}
+
+hr {
+  margin: 10px 0;
+}
 
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #777;
   line-height: 16px;
   float: left;
 }
@@ -73,7 +95,7 @@ h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #777;
   line-height: 16px;
   float: right;
 
@@ -81,22 +103,32 @@ h5 {
 
 p {
   font-size: 14px;
-  color: #333;
+  color: #222;
   line-height: 21px;
 }
 
 a {
-  color: #1199c3;
-  text-decoration: none;
-  margin-top: 10px;
+  color: #19c;
   display: block;
+  font-size: 16px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.online-link {
+  display: inline-block;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 5px;
+  width: 100%;
 }
 
 .welcome-message {
-  font-style: italic;
-  font-size: 18px;
   color: #f3f3f3;
+  font-family: "Caveat", cursive;
+  font-size: 28px;
   line-height: 28px;
+  text-transform: lowercase;
 }
 
 #skills-h3 {
@@ -113,8 +145,7 @@ a {
 }
 
 .white-text {
-  font-weight: bold;
-  color: #fff;
+  color: #ddd;
 }
 
 .gray {
@@ -129,16 +160,29 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: rgb(25, 30, 33);
 }
 
 .flex-box {
   display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
   justify-content: space-around;
   padding: 10px;
+}
+
+@media screen and (max-width: 522px) {
+  .flex-box {
+    text-align: center;
+  }
 }
 
 .center-content {
@@ -150,14 +194,26 @@ ul {
 }
 
 .biopic {
+  border-radius: 50%;
+  box-shadow: 0 0 10px #555;
+  display: block;
   float: left;
-  padding: 10px;
-  width: 200px;
-  display: none;
+  margin: 10px;
+  min-width: 100px;
+  padding: 0;
+  width: 15vw;
 }
 
-img {
-  padding: 10px;
+@media screen and (max-width: 522px) {
+  .biopic {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 523px) and (max-width: 749px) {
+  #skills {
+    margin-top: 38px;
+  }
 }
 
 span {
@@ -176,18 +232,9 @@ span {
   }
 }
 
-@media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
-}
-
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 749px) {
   #lets-connect {
     margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
   }
   .welcome-message {
     display: none;
@@ -207,8 +254,96 @@ span {
 }
 
 @media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
+  #skills-h3 {
     display: block;
+    margin-left: 18%;
   }
+}
+
+/* Customizing the added Bootstrap Dropdown Menu, containing my contacts */
+
+.btn-group {
+  width: 100%;
+}
+
+.btn-group>.btn:first-child {
+  margin: 10px 30% 5px;
+}
+
+.dropdown-menu {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  width: 100%;
+}
+
+@media screen and (max-width: 749px) {
+  .dropdown-menu {
+    text-align: center;
+  }
+}
+
+.dropdown-toggle {
+  background: transparent;
+  border: 1px solid #ddd;
+  color: #ddd;
+  text-transform: uppercase;
+  width: 40%;
+}
+
+.dropdown-toggle:focus {
+  background: transparent;
+  color: #ddd;
+}
+
+@media screen and (min-width: 750px) {
+  .dropdown-toggle {
+    display: none;
+  }
+}
+
+.btn-group.open .dropdown-menu {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+@media screen and (min-width: 750px) {
+  #topContacts {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
+    justify-content: space-around;
+    padding: 10px;
+  }
+}
+
+.btn-group.open .dropdown-toggle,
+.btn-group.open .dropdown-toggle:focus {
+  background: transparent;
+  border: 1px solid #ddd;
+  color: #ddd;
+}
+.btn-group.open .dropdown-toggle:hover {
+  background-color: #ddd;
+  color: #333;
 }
