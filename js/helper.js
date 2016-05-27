@@ -170,6 +170,10 @@ function initializeMap() {
       title: name
     };
 
+    var infoWindowOptions = {
+      content: name
+    };
+
     // Here comes code I added to substitute the markers icons with the place's
     // image, in the case that image exist, by encapsulating the 'icon' property
     // inside the 'markerOptions' object.
@@ -177,7 +181,9 @@ function initializeMap() {
     var placePhoto = placeData.photos;
 
     if (placePhoto) {
+      var Url = placePhoto[0].getUrl({'maxWidth': 300, 'maxHeight': 150});
       markerOptions.icon = placePhoto[0].getUrl({'maxWidth': 100, 'maxHeight': 50});
+      infoWindowOptions.content = '<h3 id="info-window-title">' + name + '</h3>' + '<img class="img-responsive info-window-img" src="' + Url + '">';
     }
 
     var marker = new google.maps.Marker(markerOptions);
@@ -185,9 +191,7 @@ function initializeMap() {
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
     // about a location.
-    var infoWindow = new google.maps.InfoWindow({
-      content: name
-    });
+    var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {

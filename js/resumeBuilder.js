@@ -55,15 +55,8 @@ var work = {
             'employer': 'Self Employed',
             'title': 'Freelance Sound Engineer',
             'dates': 'March 2012 - March 2015',
-            'location': 'Monteroduni(IS), Italy',
+            'location': 'CastelloPignatelli, Monteroduni(IS), Italy',
             'description': 'Multitrack recording, audio editing and mixing; FOH mixing during live music events.'
-        },
-        {
-            'employer': 'Self Employed',
-            'title': 'Classical Guitar teacher',
-            'dates': '2008 - March 2015',
-            'location': 'Monteroduni(IS), Italy',
-            'description': 'Music theory and classical guitar private tuition.'
         },
         {
             'employer': 'Self Employed',
@@ -102,7 +95,7 @@ var education = {
         },
         {
             'name': 'Federico II University',
-            'location': 'Piazzale Tecchio, Naples(NA), Italy',
+            'location': 'Naples(NA), Italy',
             'degree': 'Not Completed (3 exams to completion) BSc Mechanical Engineering',
             'majors': 'Mathematical Analysis, Analytical Mechanics, Materials Technology, Physics, Chemistry',
             'dates': '2004 - 2008',
