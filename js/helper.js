@@ -163,11 +163,24 @@ function initializeMap() {
     var bounds = window.mapBounds;            // current boundaries of the map window
 
     // marker is an object with additional data about the pin for a single location
-    var marker = new google.maps.Marker({
+
+    var markerOptions = {
       map: map,
       position: placeData.geometry.location,
       title: name
-    });
+    };
+
+    // Here comes code I added to substitute the markers icons with the place's
+    // image, in the case that image exist, by encapsulating the 'icon' property
+    // inside the 'markerOptions' object.
+
+    var placePhoto = placeData.photos;
+
+    if (placePhoto) {
+      markerOptions.icon = placePhoto[0].getUrl({'maxWidth': 100, 'maxHeight': 50});
+    }
+
+    var marker = new google.maps.Marker(markerOptions);
 
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information

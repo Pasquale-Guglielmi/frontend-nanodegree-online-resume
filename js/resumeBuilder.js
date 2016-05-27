@@ -41,7 +41,7 @@ var work = {
             'employer': 'Self Employed',
             'title': 'Front-End Web Development Student',
             'dates': 'February 2016 - present',
-            'location': 'Udacity',
+            'location': 'London',
             'description': 'Using HTML5, CSS3 and JavaScript to build beautiful and responsive websites optimized for mobile and desktop performance.'
         },
         {
