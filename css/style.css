@@ -39,8 +39,8 @@ h2 {
 }
 
 h3 {
+  font-size: 22px;
   font-style: italic;
-  font-size: 20px;
   color: #000;
   line-height: 22px;
 }
@@ -150,7 +150,6 @@ a {
 
 .gray {
   background-color: #f3f3f3;
-  padding-bottom: 10px;
   clear:both;
 }
 
@@ -348,6 +347,42 @@ span {
 }
 
 .info-window-img {
-  width: 300px;
+  max-width: 300px;
   margin: 0;
+}
+
+#info-window-title {
+  font-size: 14px;
+  padding: 0;
+}
+
+
+/* here I'm adding styles and media queries to classes toggled by jWueries in the resumeBuilder.js */
+
+.plus,
+.minus {
+  float: right;
+  padding: 0;
+  height: 100%;
+  font-size: 26px;
+  font-style: normal;
+  width: 20px;
+}
+
+.minus {
+  display: none;
+}
+
+.target:hover {
+  background-color: #f5ae23;
+}
+
+@media screen and (max-width: 573px) {
+  .target {
+    text-align: center;
+    padding-left: calc(5% + 20px);
+  }
+  #mapDiv {
+    text-align: center;
+  }
 }

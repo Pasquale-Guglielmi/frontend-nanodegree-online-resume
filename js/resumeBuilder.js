@@ -10,7 +10,7 @@ var bio = {
     },
     'welcome' : '...in code we trust !',
     'skills' : ['HTML5', 'CSS3', 'Bootstrap', 'Git', 'JavaScript'],
-    'biopic' : 'images/me.jpg',
+    'biopic' : 'images/me2.jpg',
     display: function(){
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -55,7 +55,7 @@ var work = {
             'employer': 'Self Employed',
             'title': 'Freelance Sound Engineer',
             'dates': 'March 2012 - March 2015',
-            'location': 'CastelloPignatelli, Monteroduni(IS), Italy',
+            'location': 'Monteroduni(IS), Italy',
             'description': 'Multitrack recording, audio editing and mixing; FOH mixing during live music events.'
         },
         {
@@ -230,6 +230,56 @@ $(window).resize(function () {
 
 
 
+// Here I make the resume more tidy and interactive by hiding education, work and projects "entry" divs and adding
+//to their parents an event listener on click events to toggle them.
 
 
+var interactiveWorks = function(){
+    var hiddenWorks = $(".work-entry");
+    var target = $("#workExperience").children("h2");
+    target.css("cursor", "pointer");
+    hiddenWorks.hide();
+    target.on("click", function(){
+        hiddenWorks.slideToggle(500);
+        $(this).find(".plus").toggle();
+        $(this).find(".minus").toggle();
+    });
+};
 
+interactiveWorks();
+
+var interactiveProjects = function(){
+    var hiddenProjects = $(".project-entry");
+    var target = $("#projects").children("h2");
+    target.css("cursor", "pointer");
+    hiddenProjects.hide();
+    target.on("click", function(){
+        hiddenProjects.slideToggle(500);
+        $(this).find(".plus").toggle();
+        $(this).find(".minus").toggle();
+    });
+};
+
+interactiveProjects();
+
+var interactiveEducation = function(){
+    var hiddenEducation = $(".education-entry");
+    var target = $("#education").children("h2");
+    var target2 = $("#education").children("h3");
+    target.css("cursor", "pointer");
+    target2.css("cursor", "pointer");
+    hiddenEducation.hide();
+    target2.hide();
+    target.on("click", function(){
+        $(this).nextUntil(target2.next()).slideToggle(500);
+        $(this).find(".plus").toggle();
+        $(this).find(".minus").toggle();
+    });
+    target2.on("click", function(){
+        $(this).nextAll().slideToggle(500);
+        $(this).find(".plus").toggle();
+        $(this).find(".minus").toggle();
+    });
+};
+
+interactiveEducation();
