@@ -264,18 +264,12 @@ interactiveProjects();
 
 var interactiveEducation = function(){
     var hiddenEducation = $(".education-entry");
+    var hiddenTitle = $("#education").children("h3");
     var target = $("#education").children("h2");
-    var target2 = $("#education").children("h3");
     target.css("cursor", "pointer");
-    target2.css("cursor", "pointer");
     hiddenEducation.hide();
-    target2.hide();
+    hiddenTitle.hide();
     target.on("click", function(){
-        $(this).nextUntil(target2.next()).slideToggle(500);
-        $(this).find(".plus").toggle();
-        $(this).find(".minus").toggle();
-    });
-    target2.on("click", function(){
         $(this).nextAll().slideToggle(500);
         $(this).find(".plus").toggle();
         $(this).find(".minus").toggle();
