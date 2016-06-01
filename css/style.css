@@ -363,10 +363,7 @@ span {
 .minus {
   float: right;
   padding: 0;
-  height: 100%;
-  font-size: 26px;
-  font-style: normal;
-  width: 20px;
+  width: 24px;
 }
 
 .minus {
@@ -380,7 +377,7 @@ span {
 @media screen and (max-width: 573px) {
   .target {
     text-align: center;
-    padding-left: calc(5% + 20px);
+    padding-left: calc(5% + 24px);
   }
   #mapDiv {
     text-align: center;
