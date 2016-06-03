@@ -356,8 +356,15 @@ span {
   padding: 0;
 }
 
+/* Styling projects images */
 
-/* here I'm adding styles and media queries to classes toggled by jWueries in the resumeBuilder.js */
+@media screen and (min-width: 1281px) {
+  .project1 {
+    width: 100%;
+  }
+}
+
+/* here I'm adding styles and media queries to classes toggled by jQueries in the resumeBuilder.js */
 
 .plus,
 .minus {

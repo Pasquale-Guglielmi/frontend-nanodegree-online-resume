@@ -160,7 +160,7 @@ var education = {
             var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[j].school);
             var formattedTitleSchool = formattedTitle + formattedSchool;
             var formattedDate = HTMLonlineDates.replace("%data%", education.onlineCourses[j].date);
-            var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[j].url);
+            var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[j].url).replace("#", education.onlineCourses[j].url);
             $(".education-entry:last").append(formattedTitleSchool, formattedDate, formattedUrl);
         }
     }
@@ -174,9 +174,7 @@ var projects = {
             'title': ["Build a Portfolio Site", "https://github.com/Pasquale-Guglielmi/portfolio-page"],
             'dates': 'May 2016',
             'description': 'Replicate a design mockup provided in PDF, developing a fully responsive personal portfolio page using HTML, CSS, and the Bootstrap framework.',
-            'images': [
-                'https://s3.amazonaws.com/accredible_api_evidence_items/previews/138065/large/1462909999808?1462909979'
-            ]
+            'images': ['images/project1_big_x1.jpg']
         }
     ],
     display: function(){
