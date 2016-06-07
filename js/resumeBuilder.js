@@ -1,3 +1,5 @@
+'use strict';
+
 var bio = {
     'name': 'Pasquale Guglielmi',
     'role': 'Front-End Web Developer',
@@ -8,14 +10,14 @@ var bio = {
         'GitHub': 'https://github.com/Pasquale-Guglielmi',
         'location': 'London'
     },
-    'welcome': '...in code we trust !',
+    'welcomeMessage': '...in code we trust !',
     'skills': ['HTML5', 'CSS3', 'Bootstrap', 'Git', 'JavaScript'],
     'biopic': 'images/me2.jpg',
     display: function() {
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         var forattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
-        var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcome);
+        var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
         $("#header").prepend(formattedName, formattedRole);
         $("#header").append(forattedBiopic, formattedWelcome);
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
@@ -39,26 +41,26 @@ var work = {
     'jobs': [{
         'employer': 'Self Employed',
         'title': 'Front-End Web Development Student',
-        'dates': 'February 2016 - present',
         'location': 'London',
+        'dates': 'February 2016 - present',
         'description': 'Using HTML5, CSS3 and JavaScript to build beautiful and responsive websites optimized for mobile and desktop performance.'
     }, {
         'employer': 'Denmark Street Studios',
         'title': 'Studio Assistant',
-        'dates': 'July 2015 - February 2016',
         'location': 'London, Denmark Street',
+        'dates': 'July 2015 - February 2016',
         'description': 'Volunteering in assisting sound engineers and musicians during recording sessions; audio editing; troubleshooting.'
     }, {
         'employer': 'Self Employed',
         'title': 'Freelance Sound Engineer',
-        'dates': 'March 2012 - March 2015',
         'location': 'Monteroduni(IS), Italy',
+        'dates': 'March 2012 - March 2015',
         'description': 'Multitrack recording, audio editing and mixing; FOH mixing during live music events.'
     }, {
         'employer': 'Self Employed',
         'title': 'Musician',
-        'dates': '2003 - March 2015',
         'location': 'Molise, Italy',
+        'dates': '2003 - March 2015',
         'description': ' Guitarist, banjoist.'
     }],
     display: function() {
@@ -83,21 +85,21 @@ var education = {
         'name': 'Spray Records',
         'location': 'Moscufo(PE), Italy',
         'degree': 'Certificate',
-        'majors': 'Acoustic, Psychoacoustics, Studio Recording, Live Education, P.A. Systems',
+        'majors': ['Acoustic', 'Psychoacoustics', 'Studio Recording', 'Live Education', 'P.A. Systems'],
         'dates': '2011 - 2012',
         'url': 'http://www.sprayrecords.it/'
     }, {
         'name': 'Federico II University',
         'location': 'Naples(NA), Italy',
         'degree': 'Not Completed (3 exams to completion) BSc Mechanical Engineering',
-        'majors': 'Mathematical Analysis, Analytical Mechanics, Materials Technology, Physics, Chemistry',
+        'majors': ['Mathematical Analysis', 'Analytical Mechanics', 'Materials Technology', 'Physics', 'Chemistry'],
         'dates': '2004 - 2008',
         'url': 'http://www.unina.it/home;jsessionid=7FAD553981128133B124FF3F1AEDAE83.node_staging12'
     }, {
         'name': 'Liceo Scientifico Ettore Majorana',
         'location': 'Isernia(IS), Italy',
         'degree': 'Diploma',
-        'majors': 'Math, Physics, Chemistry, Biology, English',
+        'majors': ['Math', 'Physics', 'Chemistry', 'Biology', 'English'],
         'dates': '1998 - 2003',
         'url': 'http://www.isismajoranafascitelli.gov.it/web/'
     }],
@@ -134,8 +136,8 @@ var education = {
             var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
             var formattedNameDegree = formattedName + formattedDegree;
             var formattedDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
+            var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[i].majors.join(", "));
             var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
-            var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
             $(".education-entry:last").append(formattedNameDegree, formattedDates, formattedLocation, formattedMajors);
         }
         $("#education").append(HTMLonlineClasses);
