@@ -160,15 +160,16 @@ education.display();
 
 var projects = {
     'projects': [{
-        'title': ["Build a Portfolio Site", "https://github.com/Pasquale-Guglielmi/portfolio-page"],
+        'title': 'Build a Portfolio Site',
         'dates': 'May 2016',
         'description': 'Replicate a design mockup provided in PDF, developing a fully responsive personal portfolio page using HTML, CSS, and the Bootstrap framework.',
-        'images': ['images/project1_big_x1.jpg']
+        'images': ['images/project1_big_x1.jpg'],
+        'url': 'https://github.com/Pasquale-Guglielmi/portfolio-page'
     }],
     display: function() {
         for (var i = 0; i < projects.projects.length; i++) {
             $("#projects").append(HTMLprojectStart);
-            var formattedTitle = HTMLprojectTitle.replace("#", projects.projects[i].title[1]).replace("%data%", projects.projects[i].title[0]);
+            var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#", projects.projects[i].url);
             var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
             var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
             $(".project-entry:last").append(formattedTitle, formattedDates, formattedDescription);
