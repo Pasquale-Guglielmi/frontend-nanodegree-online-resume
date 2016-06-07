@@ -7,7 +7,7 @@ var bio = {
         'mobile': '07481418252',
         'email': 'guglielmipasquale@yahoo.it',
         'gmail': 'guglielmipasquale@gmail.com',
-        'GitHub': 'https://github.com/Pasquale-Guglielmi',
+        'github': 'https://github.com/Pasquale-Guglielmi',
         'location': 'London'
     },
     'welcomeMessage': '...in code we trust !',
@@ -23,7 +23,7 @@ var bio = {
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
         var formattedGmail = HTMLcontactGeneric.replace("%data%", bio.contacts.gmail).replace("%contact%", "gmail");
         var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-        var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.GitHub);
+        var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
         var formattedMainLocation = HTMLlocation.replace("%data%", bio.contacts.location);
         $("#topContacts").add("#footerContacts").append(formattedEmail, formattedGmail, formattedMobile, formattedGitHub, formattedMainLocation);
         if (bio.skills.length > 0) {
@@ -43,19 +43,22 @@ var work = {
         'title': 'Front-End Web Development Student',
         'location': 'London',
         'dates': 'February 2016 - present',
-        'description': 'Using HTML5, CSS3 and JavaScript to build beautiful and responsive websites optimized for mobile and desktop performance.'
+        'description': 'Using HTML5, CSS3 and JavaScript to build beautiful and responsive ' +
+            'websites optimized for mobile and desktop performance.'
     }, {
         'employer': 'Denmark Street Studios',
         'title': 'Studio Assistant',
         'location': 'London, Denmark Street',
         'dates': 'July 2015 - February 2016',
-        'description': 'Volunteering in assisting sound engineers and musicians during recording sessions; audio editing; troubleshooting.'
+        'description': 'Volunteering in assisting sound engineers and musicians ' +
+            'during recording sessions; audio editing; troubleshooting.'
     }, {
         'employer': 'Self Employed',
         'title': 'Freelance Sound Engineer',
         'location': 'Monteroduni(IS), Italy',
         'dates': 'March 2012 - March 2015',
-        'description': 'Multitrack recording, audio editing and mixing; FOH mixing during live music events.'
+        'description': 'Multitrack recording, audio editing and mixing; ' +
+            'FOH mixing during live music events.'
     }, {
         'employer': 'Self Employed',
         'title': 'Musician',
